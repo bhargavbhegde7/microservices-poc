@@ -11,7 +11,7 @@ There are 3 services each of which act as a separate web service, which can be h
   When she tries to login, this token is sent to her. 
   when she tries to access the home page the front end app sends this token to the data service which in turn verifies the truthfulness of the client using the auth service.
 
-3. Data service
+3. Data service:
   This service is just a dummy service to show how the JWT verification works. The front end service sends the token to this service, asking for some particular data.
   This service sends the token to the auth service. Auth service verifies this token with the DB and replies with a "OK" (http 200) or "auth fail"(http 401)
 
