@@ -19,3 +19,7 @@ TO RUN:
 
 1. clone the repo
 2. run "docker-compose up"
+
+OR 
+
+The three services can also be run as separeate apps without docker on three different ports on the PC (mongodb required).
