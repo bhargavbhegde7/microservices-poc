@@ -24,11 +24,6 @@ npm run e2e
 # run all tests
 npm test
 ```
-
-Auth service: https://github.com/bhargavbhegde7/auth-service-picturestore
-
-Secure data service: https://github.com/bhargavbhegde7/data-service-picturestore
-
 Tutorial followed: 
 1. https://paweljw.github.io/2017/09/vue.js-front-end-app-part-3-authentication
 2. https://medium.com/codingthesmartway-com-blog/vue-js-2-quickstart-tutorial-2017-246195cfbdd2
