@@ -1,0 +1,22 @@
+version: '3' 
+services:
+  data-service-picturestore:
+    build: ./data-service-picturestore/
+    container_name: "data-service-picturestore"
+    ports: ["4000:4000"]
+    environment: ["HOST=0.0.0.0"] #web-pack by default uses localhost. To be accessible outside docker, host should be set to 0.0.0.0
+  mongo:
+    image: mongo:latest
+    container_name: "mongodb"
+    ports: ["27017:27017"]
+  auth-service-picturestore:
+    build: ./auth-service-picturestore/
+    container_name: "auth-service-picturestore"
+    ports: ["3000:3000"]
+    environment: ["HOST=0.0.0.0"] #web-pack by default uses localhost. To be accessible outside docker, host should be set to 0.0.0.0
+    links: [mongo]
+  front-end-picturestore:
+    build: ./front-end-picturestore/
+    container_name: "front-end-picturestore"
+    ports: ["8080:8080"]
+    environment: ["HOST=0.0.0.0"] #web-pack by default uses localhost. To be accessible outside docker, host should be set to 0.0.0.0
