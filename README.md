@@ -18,8 +18,15 @@ There are 3 services each of which act as a separate web service, which can be h
 TO RUN:
 
 1. clone the repo
-2. run "docker-compose up"
+2. run "docker-compose up -d" (-d for detached)
 
 OR 
 
 The three services can also be run as separeate apps without docker on three different ports on the PC (mongodb required).
+
+
+To see the LOGS:
+
+docker logs containerid -t -f 
+(-t timestamp, -f follow)
+

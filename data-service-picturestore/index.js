@@ -9,7 +9,7 @@ var request = require('request');
 var variable = {}
 
 app.get('/', function (req, res) {
-  
+
   variable.name = false;
   variable.email = false;
   
@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
     headers: {
       'x-access-token': req.headers['x-access-token']
     },
-    uri: 'http://localhost:3000/api/auth/verify-token',
+    uri: 'http://auth-service-picturestore:3000/api/auth/verify-token',
     method: 'GET'
   }, function (err, response, body) {
 	  if (!err && response.statusCode == 200) {
