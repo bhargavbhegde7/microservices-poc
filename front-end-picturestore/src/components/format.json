@@ -1,0 +1,11 @@
+{
+	"imageid": {
+		"url": "https://example.com/image.jpg",
+		"title": "Awesome image", 
+		"description": "taken on the hike to mt ruvenzori",
+		"owner": 842347,
+		"timestamp": "timestamp value",
+		"upvotes": 32145,
+		"downvotes": 839,
+	}
+}

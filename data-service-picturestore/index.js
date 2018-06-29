@@ -17,18 +17,20 @@ app.get('/', function (req, res) {
     headers: {
       'x-access-token': req.headers['x-access-token']
     },
-    uri: 'http://auth-service-picturestore:3000/api/auth/verify-token',
+    //uri: 'http://auth-service-picturestore:3000/api/auth/verify-token',
+    uri: 'http://localhost:3000/api/auth/verify-token',
     method: 'GET'
   }, function (err, response, body) {
 	  if (!err && response.statusCode == 200) {
-		var jsonData = JSON.parse(body);
-		variable.name = jsonData.name;
+
+		  var jsonData = JSON.parse(body);
+		  variable.name = jsonData.name;
 	    variable.email = jsonData.email;	
 
-		res.send(variable);
+		  res.send(variable);
 	  }
 	  else{
-		  console.log("failed to verify the token");
+      // Failed to verify the token
 		  res.send(variable);
 	  }		
   });

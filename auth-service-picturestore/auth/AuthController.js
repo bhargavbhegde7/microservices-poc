@@ -67,7 +67,6 @@ router.post('/login', function(req, res) {
 });*/
 
 router.get('/verify-token', VerifyToken, function(req, res, next) {
-  console.log("token-verification GET request coming from coming from : "+req.get('host'))
   User.findById(req.userId, { password: 0 }, function (err, user) {
     if (err) return res.status(500).send("There was a problem finding the user.");
     if (!user) return res.status(404).send("No user found.");

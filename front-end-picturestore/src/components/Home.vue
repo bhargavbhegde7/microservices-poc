@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ pictures }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -85,31 +85,43 @@ export default {
   name: 'Home',
   data () {
     return {
-      msg: 'Loading',
+      pictures: 'Loading pictures',
       token: localStorage.token
     }
   },
   created: function () {
-    this.fetchData()
+    this.fetchUserData()
+    this.fetchPictures()
   },
   methods: {
     logout () {
       delete localStorage.token
       this.token = false
-      this.msg = 'Logged out'
+      this.$parent.msg = 'Logged out'
       this.flash('Logout successful', 'success')
       this.$router.replace(this.$route.query.redirect || '/')
     },
-    fetchData () {
+    fetchUserData () {
       this.$http.get('http://localhost:4000', {headers: {'x-access-token': localStorage.token}})
-        .then(response => this.successful(response))
-        .catch(() => this.fetchFailed())
+        .then(response => this.fetchUserDataSuccessful(response))
+        .catch(() => this.fetchUserDataFailed())
     },
-    successful (response) {
-      this.msg = response.body
+    fetchUserDataSuccessful (response) {
+      this.$parent.msg = response.body
     },
-    fetchFailed () {
-      this.msg = 'Couldn\'t get data'
+    fetchUserDataFailed () {
+      this.$parent.msg = 'Couldn\'t get user data from the data service'
+    },
+    fetchPictures () {
+      this.$http.get('http://localhost:5000', {headers: {'x-access-token': localStorage.token}})
+        .then(response => this.fetchPicturesSuccessful(response))
+        .catch(() => this.fetchPicturesFailed())
+    },
+    fetchPicturesSuccessful (response) {
+      this.pictures = response.body
+    },
+    fetchPicturesFailed () {
+      this.pictures = 'Couldn\'t get pictures from the picture service'
     }
   }
 }
