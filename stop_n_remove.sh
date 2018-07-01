@@ -1,3 +1,5 @@
+#This script stops and removes all the containers and all the images from docker
+
 #stop all the containers
 docker stop $(docker ps -a -q)
 #remove all the containers.

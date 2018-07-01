@@ -1,0 +1,1 @@
+start cmd.exe /k "cd D:\work\microservices-poc\data-service-picturestore && node index.js"

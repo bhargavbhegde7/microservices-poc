@@ -25,14 +25,14 @@ app.get('/', function (req, res) {
 
 		  var jsonData = JSON.parse(body);
 		  variable.name = jsonData.name;
-	    variable.email = jsonData.email;	
+	    variable.email = jsonData.email;
 
 		  res.send(variable);
 	  }
 	  else{
       // Failed to verify the token
 		  res.send(variable);
-	  }		
+	  }
   });
 });
 

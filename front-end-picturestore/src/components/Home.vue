@@ -98,6 +98,7 @@ export default {
       delete localStorage.token
       this.token = false
       this.$parent.msg = 'Logged out'
+      this.pictures = 'Logged out'
       this.flash('Logout successful', 'success')
       this.$router.replace(this.$route.query.redirect || '/')
     },

@@ -1,0 +1,1 @@
+start cmd.exe /k "cd D:\work\microservices-poc\picture-service-picturestore && go run server.go"
