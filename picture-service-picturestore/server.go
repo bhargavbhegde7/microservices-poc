@@ -11,18 +11,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-type User struct {
-    name string
-    email string
-}
-
-//GetIndexEndpoint . . .
-/*func GetIndexEndpoint(w http.ResponseWriter, r *http.Request) {
-	fmt.Println(r.Header.Get("x-access-token"))
-	fmt.Fprintf(w, "These are not the droids you're looking for")
-}*/
-
-//PostIndexEndpoint . . .
 func GetIndexEndpoint(w http.ResponseWriter, r *http.Request) {
 	client := &http.Client{
 		
