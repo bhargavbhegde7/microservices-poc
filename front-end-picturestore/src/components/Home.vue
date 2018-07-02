@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <ul id="example-1">
+    <ul id="images">
+      <li v-if="$parent.msg.name">
+      </li>
       <li class="list-element" v-for="pic in pictures" v-bind:key="pic.imageid">
         <img v-bind:src="pic.url" />
       </li>
@@ -49,7 +51,7 @@ export default {
       delete localStorage.token
       this.token = false
       this.$parent.msg = 'Logged out'
-      this.pictures = 'Logged out'
+      // this.pictures = 'Logged out'
       this.flash('Logout successful', 'success')
       this.$router.replace(this.$route.query.redirect || '/')
     },

@@ -17,7 +17,8 @@
     "vue": "^2.5.2",
     "vue-flash-message": "^0.6.0",
     "vue-resource": "^1.5.1",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-upload-component": "^2.8.9"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
