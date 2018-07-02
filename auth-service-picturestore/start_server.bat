@@ -1,1 +1,1 @@
-start cmd.exe /k "cd D:\work\microservices-poc\auth-service-picturestore && node server.js"
+start cmd.exe /k "cd auth-service-picturestore && npm install && node server.js"

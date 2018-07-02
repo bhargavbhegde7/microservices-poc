@@ -1,1 +1,1 @@
-start cmd.exe /k "cd D:\work\microservices-poc\front-end-picturestore && npm run dev"
+start cmd.exe /k "cd front-end-picturestore && npm install && npm run dev"

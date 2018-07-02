@@ -33,7 +33,16 @@ func GetIndexEndpoint(w http.ResponseWriter, r *http.Request) {
 			log.Fatal("Couldn't parse the response body")
 		}
 		bodyString := string(body)
-		fmt.Fprintf(w, bodyString)
+		//fmt.Fprintf(w, bodyString)
+		fmt.Println(bodyString)//real response
+
+		//mock response with picture urls.
+		b, err := ioutil.ReadFile("format.json") // b has type []byte
+		if err != nil {
+			log.Fatal(err)
+		}
+		str := string(b)
+		fmt.Fprintf(w, str)
 	}
 }
 
