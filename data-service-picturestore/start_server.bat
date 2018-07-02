@@ -1,1 +1,1 @@
-start cmd.exe /k "cd data-service-picturestore && npm install && node index.js"
+start cmd.exe /k "cd data-service-picturestore && node index.js"

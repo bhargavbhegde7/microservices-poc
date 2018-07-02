@@ -1,0 +1,1 @@
+start cmd.exe /k "cd front-end-picturestore && npm install && npm run dev"
