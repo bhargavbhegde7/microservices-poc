@@ -2,6 +2,8 @@
   <div class="hello">
     <ul id="images">
       <li v-if="$parent.msg.name">
+        <input type="file" @change="onFileChanged">
+        <button @click="onUpload">Upload!</button>
       </li>
       <li class="list-element" v-for="pic in pictures" v-bind:key="pic.imageid">
         <img v-bind:src="pic.url" />
@@ -34,10 +36,13 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Home',
+  axios: 'axios',
   data () {
     return {
+      selectedFile: null,
       pictures: 'Loading pictures',
       token: localStorage.token
     }
@@ -76,6 +81,14 @@ export default {
     },
     fetchPicturesFailed () {
       this.pictures = 'Couldn\'t get pictures from the picture service'
+    },
+    onFileChanged (event) {
+      this.selectedFile = event.target.files[0]
+    },
+    onUpload () {
+      const formData = new FormData()
+      formData.append('uploadfile', this.selectedFile, this.selectedFile.name)
+      axios.post('http://localhost:5000', formData)
     }
   }
 }
