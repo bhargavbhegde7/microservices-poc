@@ -9,6 +9,22 @@
       <input v-model="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
     </form>
+    <ul>
+      <li>
+        <a
+          href="#/"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="#/signup"
+        >
+          Sign up
+        </a>
+      </li>
+    </ul>
   </div>
   </div>
 </template>

@@ -10,14 +10,14 @@
       </li>
     </ul>
     <ul>
-      <li>
+      <li v-if="!$parent.msg.name">
         <a
           href="#/signup"
         >
           Sign up
         </a>
       </li>
-      <li>
+      <li v-if="!$parent.msg.name">
         <a
           href="#/login"
         >
