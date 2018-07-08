@@ -1,6 +1,6 @@
 [{
 		"imageid": "img_85637",
-		"url": "https://example.com/img_85637.jpg",
+		"url": "http://localhost:5000/static/c196c36c65057f76dcc937971bd7f4df.jpg",
 		"title": "Awesome image",
 		"description": "taken on the hike to mt ruvenzori",
 		"owner": 842347,
@@ -10,7 +10,7 @@
 	},
 	{
 		"imageid": "img_85324",
-		"url": "https://example.com/img_85637.jpg",
+		"url": "http://localhost:5000/static/images/south_tyrol_bolzano_mountains_clouds_109719_3840x2160.jpg",
 		"title": "Awesome image",
 		"description": "taken on the hike to mt ruvenzori",
 		"owner": 842347,

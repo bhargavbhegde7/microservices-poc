@@ -81,15 +81,29 @@ func GetIndexEndpoint(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+/*func GetImagesEndpoint(w http.ResponseWriter, r *http.Request) {
+	b, err := ioutil.ReadFile("format.json") // b has type []byte
+		if err != nil {
+			log.Fatal(err)
+		}
+		str := string(b)
+		fmt.Fprintf(w, b)
+}*/
+
 func main() {
 	router := mux.NewRouter()
 	
 	router.HandleFunc("/", GetIndexEndpoint).Methods("GET")
+	//router.HandleFunc("/images/{img-id}", GetImagesEndpoint).Methods("GET")	
 	router.HandleFunc("/", PostIndexEndpoint).Methods("POST")
+
+    /* --------------------------------- */
+    router.PathPrefix("/static").Handler(http.FileServer(http.Dir("assets/")))
 
 	headersOk := handlers.AllowedHeaders([]string{"x-access-token"})
 	originsOk := handlers.AllowedOrigins([]string{"http://localhost:8080"})
 	methodsOk := handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "OPTIONS"})
 
 	log.Fatal(http.ListenAndServe(":" + "5000", handlers.CORS(originsOk, headersOk, methodsOk)(router)))
+	//log.Fatal(http.ListenAndServe(":" + "5000", nil))
 }
